@@ -122,7 +122,7 @@ private static final String TAG = "CameraActivity";
         // 이하 MLKit Korean OCR TextResult
         mTextResult = (TextView) findViewById(R.id.textResult);
         mTextResult.setMovementMethod(new ScrollingMovementMethod());
-
+        mTextResult.setVisibility(View.INVISIBLE);
         //촬영
         btnCamera.setOnClickListener(v -> captureCamera());
 
@@ -228,10 +228,10 @@ private static final String TAG = "CameraActivity";
                                 });
 
                 //나중에 값 옮길거
-//                String temp = mTextResult.getText().toString();
-//                Intent intent = new Intent(MainActivity.this, TestResultActivity.class);
-//                intent.putExtra("key", temp);
-//                startActivity(intent);
+                String temp = mTextResult.getText().toString();
+                Intent intent = new Intent(MainActivity.this, TestResultActivity.class);
+                intent.putExtra("key", temp);
+                startActivity(intent);
 
             }
         });
